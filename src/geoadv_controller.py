@@ -10,10 +10,17 @@ class GeoAdvController:
 		# called when the user answers a question with answer as parameter
 		self.answer_ques_handler = EventHook()
 		self.setup_answer_ques_h()
+		
 
 		# called when the current question should be displayed to the user
 		self.display_ques_handler = EventHook()
 		self.setup_display_ques_h()
+
+	def setup_answer_ques_h(self):
+		answer_ques_handler += model.isCorrect()
+
+	def choose_country(self):
+		
 
 
 '''An example of how to use an event hook:
@@ -24,7 +31,7 @@ class GeoAdvController:
 > ev = EventHook()
 > ev += party
 > 
-> ev.fire()
+> ev.fire(answer)
 have fun, rock out, throw turtles
 
 '''
